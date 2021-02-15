@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Mileage</title>
+
+<script>
+/* Input: text from user
+ * Processing: reads and assigns texts to varibles 
+ * Calulate the miles per gaallon
+ * Output: display mpg
+ */
+function mileage() {
+    // Reads the texts from the user.
+    let text1 = document.getElementById('BInputBox').value;
+    let text2 = document.getElementById('EInputBox').value;
+    let text3 = document.getElementById('GInputBox').value;
+    
+    // assigns text to number.
+    let b = parseFloat(text1);
+    let e = parseFloat(text2);
+    let g = parseFloat(text3);
+    
+    // Calutales the miles per gallon.
+    let m = (e - b) / g;
+
+    // .
+    document.getElementById('mpgDiv').innerHTML = m + " mpg";
+}
+</script>
+</head>
+
+<body>                               
+Enter the beginning odometer readings:<br><input type="text" id="BInputBox"><br>
+Enter the ending odometer readings:<br><input type="text" id="EInputBox"><br>
+The number of gallons used:<br><input type="text" id="GInputBox"><br>
+<button type="button" onclick="mileage()">Convert</button><br>
+<div id="mpgDiv"></div>                     
+</body>            
+</html>

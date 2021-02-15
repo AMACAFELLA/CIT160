@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Footwear</title>
+
+<script>
+/* 
+* Input: Will use an if statement for the user input of the following *weather:humid,wind,hot,rain	
+ * Output: Will display all the type of shoes equalled to the user input
+ */
+function footwear() {
+    // Reads the text from the user.
+    let text = document.getElementById('userinput').value;
+    //if statement checks if userinput equals to any of the weather reports if not and else statement is executed.
+    if (text == "hot") {
+        shoes = "It's hot outside let your feet breathe wear sandals!"
+    }
+    else if (text == "rain") {
+        shoes = "It's raining outside be fancy wear some galoshes!" 
+    }
+    else if (text == "snow") {
+        shoes = "It's snowing outside don't be a Yeti, wear boots!"
+    }
+    else {
+    	shoes = "Just wear shoes."
+    } 
+
+    //displays output in the div
+    document.getElementById('shoeDiv').innerHTML = shoes;
+}
+</script>
+</head>
+
+<body>                               
+<h2>Enter the weather:</h2> <input type="text" id="userinput">
+<button type="button" onclick="footwear()">Footwear</button>
+<div id="shoeDiv"></div>                     
+</body>            
+</html>

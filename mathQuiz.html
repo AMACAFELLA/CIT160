@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>MathQuiz</title>
+
+<script>
+/* 
+* Input: create text field variables assign them to float. 
+*Process: create if statement on text field if the user enters a certain value function to execute, calculate and assign to answer variable
+*create variable textbox to display the answer in
+*create comparison when text equals to answer    
+* Output: Will display answer in textbox and comparison in div
+*/
+function mQuiz() {
+    // Reads the text from the user.
+    let text = document.getElementById('userinput').value;
+    let op = document.getElementById('userinput2').value;
+    let text2 = document.getElementById('userinput3').value;
+    let text4 = document.getElementById('userinput4').value;
+
+    //assigns text to flaot
+    let num = parseFloat(text);
+    let num2 = parseFloat(text2);
+    let ans = ""
+     
+     //if statements are assign if user text equals to any of the operators than calulate the sum accordingly
+     if (op == "+") {
+        ans = num + num2;
+    }
+    else if (op == "-") {
+        ans = num - num2;
+    }
+    else if (op == "*") {
+        ans = num * num2;
+    }
+    else {
+         ans = num / num2;
+    } 
+
+    //assigns a textbox for answer to display and answer comparison
+    var textbox3 = document.getElementById('textbox3');
+      textbox3.value = ans;
+    var answer;
+      answer = (text4 == ans) ? "Correct! Good job!":"Incorrect! Try again!";
+      document.getElementById("demo").innerHTML = answer;
+}
+</script>
+</head>
+
+<body>                               
+<h2>Test Your Math Skills!</h2> <input type="text" id="userinput"><input type="text" id="userinput2"><input type="text" id="userinput3"> = <input type="text" id="userinput4">
+<br>
+<br><button type="button" onclick="mQuiz()">Calulate</button><br><br>
+Correct Answer:<input type="text" name="textbox3" id="textbox3" readonly=""/>
+<div id="demo"></div>
+
+</body>            
+</html>

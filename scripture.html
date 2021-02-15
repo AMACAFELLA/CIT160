@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Scripture Remix</title>
+<script>
+
+function remixScripture() {
+    let name = document.getElementById('nameInputBox').value;
+    //Moroni 7:46, I have a friend named Charity and this is her favourite scripture
+    let scripture = "Wherefore, my beloved brethren, if ye have not " + name +  
+    ", ye are nothing, for " + name + " never faileth. Wherefore, cleave unto " + 	     name + ", which is the greatest of all, for all things must fail.";
+
+    document.getElementById('displayDiv').innerHTML = scripture;
+}
+</script>
+</head>
+
+<body>                                      
+Please enter your name: <input type="text" id="nameInputBox">
+<button type="button" onclick="remixScripture()">Verse</button>
+<div id="displayDiv"></div>    
+</body>
+</html>
