@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Odd Sum</title>
+
+<script>
+/* Input: text from user(parseInt) 
+ * For loop is assigned a variable, checks if number is less than text, if true adds 2 to make loop odd 
+ * Output: 
+ * Display sum for all the odd numbers.
+ */
+function Odd() {
+	//assigns variables 
+	var text = parseInt(document.getElementById('num').value);
+    	var summy = 0
+	//For loop is assigned
+	for (var i = 1; i <= text; i += 2) 
+	{
+	//Adds odd numbers 
+    	summy += i;
+	}
+
+//displays sum in Odddiv
+document.getElementById("Odddiv").innerHTML = summy;
+}
+</script>
+</head>
+
+<body>
+Please enter an integer: <input type="text" id="num"><br>  
+<button type="button" onclick="Odd()">Get Sum</button>
+<div id="Odddiv"></div> 
+</body>
+</html>
