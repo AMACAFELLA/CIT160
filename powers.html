@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Powers</title>
+<script>
+/* Input: assigned variables
+ *Processing: loop if i less than 31. Power times base.
+ * Output: 
+ * Display each value with a break
+ */
+function pow() {
+ 
+ var output = "";
+ for (let i = 0;  i <= 31 ; i++ ) {       
+     output += (Math.pow(2, i) + ", " );
+  }
+  document.getElementById("divPow").innerHTML = output;
+}
+</script>
+</head>
+
+<body>
+
+<button type="button" onclick="pow()">pow pow</button>
+<div id="divPow"></div> 
+</body>
+</html>

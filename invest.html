@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title> Invest</title>
+
+<script>
+/* Input: Assign userinput to variables in function
+ * Processing: Calulates investment in function.
+ * Output: Displays the result in div.
+ */
+function doFV() {
+    //Assigning the variables
+    let amount = parseInt(document.getElementById('Amount').value);
+    let rate = parseFloat(document.getElementById('Rate').value);
+    let years = parseInt(document.getElementById('Years').value);
+    let periods = parseInt(document.getElementById('Periods').value);
+    
+    //Assigning the function
+    let result = computeFutureValue(amount, rate, years, periods);
+    document.getElementById('outputDiv').innerHTML = "$ " + result.toFixed(2);
+}
+
+function computeFutureValue(principal, annualRate, years, periodsPerYear) {
+
+//Calulates according to the formula and returns the variable
+ let rn = annualRate / periodsPerYear;
+ let n = years * periodsPerYear;
+ let f = principal * (1 + rn) ** n;
+ return f;
+}
+
+</script>
+</head>
+
+<body>  
+<h1> Invest </h1>
+Amount invested: <input type="text" id="Amount"><br>
+<br>Annual rate: <input type="text" id="Rate"><br>
+<br>Number of years: <input type="text" id="Years"><br>
+<br>Periods per year: <input type="text" id="Periods"><br>
+<br><button type="button" onclick="doFV()">Compute Future Value</button>
+<div id="outputDiv"></div>
+</body>         
+</html>

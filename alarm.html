@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Alarm</title>
+<script>
+/* Input: Get input from computer and Boolean operations AND AND OR checks to see if it the date is on the following holidays then display a meassage
+ * Output: Alarm display different output depending on the day.
+ */
+function alarm() {
+  //Assigned varibles to Date function and a message varible to print
+  var d = new Date();
+  var m = d.getMonth()
+  var day = d.getDate()
+  var week = d.getDay();
+  let message;
+  if ( day == 1 && m == 0) {
+        //New Years 
+        message = "Happy New Year, you can sleep in!";
+  }		//4th July
+  else if(day == 4 && m == 6){
+    	message = "Happy Fouth of July, you can sleep in!";
+        
+  }		//Christmas 
+  else if(day == 25 && m == 11){
+    	message = "Merry Christmas, you can sleep in!";
+        
+  }		//Weekends Saturday and Sunday.
+  else if(week == 6 || week ==0){
+    	message = "Sleep in!";
+        
+  }
+  else{ //The rest of the week
+  		message = "Rise and shine, get up!"
+  }
+   
+  document.getElementById("alarmDiv").innerHTML = message;
+}
+</script>
+
+</head>
+<body>
+
+<p>Click to see if you have to get up or sleep in.</p>
+
+<button onclick="alarm()">Check Alarm</button>
+
+<div id="alarmDiv"></div> 
+</body>
+</html>

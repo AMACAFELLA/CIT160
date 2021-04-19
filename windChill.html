@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title> Wind Chill</title>
+
+<script>
+/* Input: Assign userinput to variables temp and wind speed.
+ * Processing: Calulates wind chill in function.
+ * Output: Displays the result in Fahrenheit.
+ */
+function doInputOutput() {
+    //Assigning the variables
+    let temp = parseInt(document.getElementById('Temperature').value);
+    let wind = parseInt(document.getElementById('WindSpeed').value);
+    //Assigning the function
+    let result = windChill(temp, wind);
+    document.getElementById('outputDiv').innerHTML = "Wind Chill: " + result.toFixed(1) + "°F";
+}
+
+function windChill(tempF, speed) {
+//Assigns the variables 
+let tf = tempF;
+let sd = speed;
+//Calulates according to the formula and returns the variable
+let chill_F =  35.74 + 0.6215 * tf - 35.75 * Math.pow(sd,0.16) + 0.4275 * tf * Math.pow(sd,0.16);
+return chill_F
+}
+
+</script>
+</head>
+
+<body>                               
+Temperature: <input type="text" id="Temperature">
+Wind Speed: <input type="text" id="WindSpeed">
+<button type="button" onclick="doInputOutput()">Wind Chill</button>
+<div id="outputDiv"></div>
+</body>         
+</html>
